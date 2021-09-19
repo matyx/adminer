@@ -14,6 +14,7 @@ function adminer_object() {
         new AdminerTablesFilter,
         new AdminerDumpPhpPrototype,
         new AdminerForeignSystem,
+        new FillLoginForm(getenv('ADMINER_DEFAULT_DRIVER') ?? 'server', getenv('ADMINER_DEFAULT_HOST') ?? false, getenv('ADMINER_DEFAULT_USER') ?? false, getenv('ADMINER_DEFAULT_PASSWORD') ?? false, getenv('ADMINER_DEFAULT_DATABSE') ?? false),
     );
 
     /* It is possible to combine customization and plugins:
