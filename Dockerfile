@@ -1,6 +1,7 @@
-FROM php:8.0-alpine
+FROM php:8.2-alpine
 
-RUN docker-php-ext-install mysqli
+RUN set -ex && apk --no-cache add postgresql-dev
+RUN docker-php-ext-install mysqli pgsql
 
 COPY docker/php.ini /usr/local/etc/php/conf.d/php.ini
 COPY . /app
